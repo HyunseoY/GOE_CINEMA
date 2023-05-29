@@ -7,7 +7,10 @@ const options = {
   },
 };
 
-fetch('https://api.themoviedb.org/3/movie/upcoming?language=ko&page=1', options)
+fetch(
+  'https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1',
+  options
+)
   .then((response) => response.json())
   .then((response) => {
     document.querySelector('.movie').remove();

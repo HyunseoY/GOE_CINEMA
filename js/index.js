@@ -8,40 +8,34 @@ const options = {
 };
 
 //인기
+// https://api.themoviedb.org/3/movie/popular?api_key=d16998e9d71b30c26094b3203159ade1&language=ko&page=1
 fetch('https://api.themoviedb.org/3/movie/popular?language=ko&page=1', options)
   .then((response) => response.json())
   .then((data) => {
     const moviesContainer = document.getElementById('movies');
 
-    // 데이터를 HTML로 변환하여 동적으로 생성
+    while (moviesContainer.firstChild) {
+      moviesContainer.removeChild(moviesContainer.firstChild);
+    }
+
     data.results.forEach((movie) => {
-      const movieElement = document.createElement('div');
-      movieElement.textContent = movie.title;
-      moviesContainer.appendChild(movieElement);
+      const card = createMovieCard(movie);
+      moviesContainer.appendChild(card);
     });
   })
   .catch((err) => console.error(err));
 
-//현재상영
-fetch(
-  'https://api.themoviedb.org/3/movie/now_playing?language=ko&page=1',
-  options
-)
-  .then((response) => response.json())
-  .then((response) => console.log(response))
-  .catch((err) => console.error(err));
+function createMovieCard(movie) {
+  // 카드 요소 생성
+  const card = document.createElement('div');
+  card.classList.add('movie');
 
-// 높은평점
-fetch(
-  'https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1',
-  options
-)
-  .then((response) => response.json())
-  .then((response) => console.log(response))
-  .catch((err) => console.error(err));
+  // 포스터 이미지
+  const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+  const poster = document.createElement('img');
+  poster.src = posterUrl;
+  poster.alt = movie.title;
+  card.appendChild(poster);
 
-// 개봉예정
-fetch('https://api.themoviedb.org/3/movie/upcoming?language=ko&page=4', options)
-  .then((response) => response.json())
-  .then((response) => console.log(response))
-  .catch((err) => console.error(err));
+  return card;
+}

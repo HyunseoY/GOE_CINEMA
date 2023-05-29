@@ -28,7 +28,7 @@ fetch('https://api.themoviedb.org/3/movie/popular?language=ko&page=1', options)
 function createMovieCard(movie) {
   // 카드 요소 생성
   const card = document.createElement('div');
-  card.classList.add('card');
+  card.classList.add('movie');
 
   // 포스터 이미지
   const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
@@ -49,7 +49,7 @@ function createMovieCard(movie) {
 
   // 평점
   const voteAverage = document.createElement('p');
-  voteAverage.textContent = `평점: ${movie.vote_average}`;
+  voteAverage.textContent = `평점 ${movie.vote_average}`;
   card.appendChild(voteAverage);
 
   return card;

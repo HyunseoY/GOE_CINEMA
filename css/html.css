@@ -59,7 +59,9 @@ header ul > li {
 }
 
 .movie {
+  padding-bottom: 5%;
   display: grid;
+  /* grid-template-rows: 50% 15% 20% 10% 5%; */
   text-align: center;
   place-items: center;
   border: 1px solid #ccc;
@@ -72,4 +74,38 @@ header ul > li {
 .movie img {
   width: 100%;
   height: 370px;
+  margin-bottom: 8px;
+}
+
+.movie h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.movie p {
+  margin-bottom: 8px;
+  width: calc(180px - 1em);
+  overflow: hidden;
+  position: relative;
+  line-height: 1.2em;
+  max-height: 3.6em;
+  margin-right: -1em;
+  padding-right: 1em;
+}
+
+.movie p:before {
+  /* content: '...'; */
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.movie p:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1e7m;
+  margin-top: 0.2em;
+  background: white;
 }
