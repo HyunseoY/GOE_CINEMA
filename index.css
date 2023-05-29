@@ -2,6 +2,10 @@
   font-family: 'Black Han Sans', sans-serif;
 }
 
+body {
+  background-color: antiquewhite;
+}
+
 ul {
   list-style: none;
 }
@@ -13,8 +17,9 @@ a {
 
 header {
   width: 100%;
-  height: 80px;
+  height: 100px;
   display: flex;
+  background-color: white;
 }
 
 header > nav {
