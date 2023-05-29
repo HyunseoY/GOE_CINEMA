@@ -42,10 +42,23 @@ header ul > li {
   align-items: center;
 }
 
-.container {
-  display: flex;
+.search {
+  height: 100px;
+  display: block;
   align-items: center;
   justify-content: space-between;
+
+  margin-top: -68px;
+  margin-left: 87%;
+}
+
+#input {
+  height: 30px;
+}
+
+.container {
+  display: flex;
+  position: center;
   margin: auto;
 }
 
