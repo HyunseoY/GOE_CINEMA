@@ -13,7 +13,6 @@ fetch(
 )
   .then((response) => response.json())
   .then((response) => {
-    document.querySelector('.movie').remove();
     response.results.forEach((movie) => {
       let template = `<div class="movie">
                       <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="" />
