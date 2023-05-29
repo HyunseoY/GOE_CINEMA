@@ -35,6 +35,10 @@ header ul {
   padding-left: 0px;
 }
 
+.goe {
+  font-size: 50px;
+}
+
 header ul > li {
   font-size: 30px;
   height: 100%;
@@ -88,11 +92,12 @@ header ul > li {
 }
 
 .movie h2 {
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 8px;
 }
 
 .movie p {
+  font-size: 12px;
   margin-bottom: 8px;
   padding: 0 5% 0 5%;
   max-width: calc(100%-38px);

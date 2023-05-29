@@ -20,7 +20,7 @@ fetch(
                       <h2 class="movieName">${movie.title}</h2>
                       <p class="movieSum">${movie.overview}</p>
                       <p class="movieRate">평점 ${movie.vote_average}</p>
-                      <button class="ditailBtn">detail</button>
+                      
                     </div>`;
 
       document

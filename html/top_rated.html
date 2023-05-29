@@ -17,9 +17,9 @@
     <header>
       <nav>
         <ul>
-          <li><a href="./popular.html">인기</a></li>
+          <li><a href="./popular.html">인기영화</a></li>
           <li><a href="./now_playing.html">현재상영</a></li>
-          <li><a href="../index.html">GOE's CINEMA</a></li>
+          <li class="goe"><a href="../index.html">GOE's CINEMA</a></li>
           <li><a href="./top_rated.html">높은평점</a></li>
           <li><a href="./upcoming.html">개봉예정</a></li>
         </ul>
@@ -32,6 +32,7 @@
         autocomplete="off"
         placeholder="입력 후 Enter"
       />
+      <div id="searchResults"></div>
     </div>
 
     <main>
@@ -40,17 +41,7 @@
       </div>
 
       <div class="container">
-        <div class="cards" id="movies">
-          <div class="movie">
-            <img src="https://i.postimg.cc/PxvFGjXb/robot.png" alt="" />
-            <h2 class="movieName">movie name</h2>
-            <p class="movieSum">
-              summary summary summary summary summary summary
-            </p>
-            <p class="movieRate">9</p>
-            <button class="ditailBtn">detail</button>
-          </div>
-        </div>
+        <div class="cards" id="movies"></div>
       </div>
     </main>
 

@@ -10,14 +10,13 @@ const options = {
 fetch('https://api.themoviedb.org/3/movie/upcoming?language=ko&page=1', options)
   .then((response) => response.json())
   .then((response) => {
-    document.querySelector('.movie').remove();
     response.results.forEach((movie) => {
       let template = `<div class="movie">
                       <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="" />
                       <h2 class="movieName">${movie.title}</h2>
                       <p class="movieSum">${movie.overview}</p>
                       <p class="movieRate">평점 ${movie.vote_average}</p>
-                      <button class="ditailBtn">detail</button>
+                      
                     </div>`;
 
       document
