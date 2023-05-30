@@ -7,7 +7,8 @@ const options = {
   },
 };
 
-// 영화 데이터를 가져와서 화면에 표시하는 함수
+let movies = []; // 영화 데이터를 저장할 배열
+
 function fetchMovies() {
   fetch(
     'https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1',
@@ -15,81 +16,75 @@ function fetchMovies() {
   )
     .then((response) => response.json())
     .then((response) => {
-      const movies = response.results;
-      const moviesContainer = document.getElementById('movies');
-
-      moviesContainer.innerHTML = ''; // 이전 영화 목록 초기화
-
-      movies.forEach((movie) => {
-        const template = `<div class="movie">
-          <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="" />
-          <h2 class="movieName">${movie.title}</h2>
-          <p class="movieSum">${movie.overview}</p>
-          <p class="movieRate">평점 ${movie.vote_average}</p>
-        </div>`;
-
-        moviesContainer.insertAdjacentHTML('beforeend', template);
-      });
+      movies = response.results; // 영화 데이터를 배열에 저장
+      displayMovies(movies); // 영화 카드 표시 함수 호출
     })
-    .catch((error) => console.error(error));
+    .catch((err) => console.error(err));
+}
+
+// 영화 카드를 표시하는 함수
+function displayMovies(movies) {
+  const moviesContainer = document.getElementById('movies');
+
+  movies.forEach((movie) => {
+    const template = `<div class="movie">
+                        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="" />
+                        <h2 class="movieName">${movie.title}</h2>
+                        <p class="movieSum">${movie.overview}</p>
+                        <p class="movieRate">평점 ${movie.vote_average}</p>
+                      </div>`;
+
+    moviesContainer.insertAdjacentHTML('beforeend', template);
+  });
 }
 
 // 검색어를 사용하여 영화를 필터링하는 함수
 function searchFilter(data, search) {
-  return data.filter((movie) => movie.title.includes(search));
+  const searchKeywords = search.toLowerCase().split(' ');
+
+  return data.filter((movie) => {
+    const movieTitle = movie.title.toLowerCase().replace(/\s/g, '');
+
+    return searchKeywords.every((keyword) => movieTitle.includes(keyword));
+  });
 }
 
 // 검색 버튼 클릭 시 호출되는 함수
 function search() {
-  document.getElementById('movies').innerHTML = '';
   const searchInput = document.getElementById('input');
   const searchText = searchInput.value.trim().toLowerCase();
+  const moviesContainer = document.getElementById('movies');
+
+  // 기존 영화 카드 삭제
+  moviesContainer.innerHTML = '';
 
   if (searchText === '') {
     // 검색어가 없는 경우, 모든 영화를 다시 표시
-    fetchMovies();
+    displayMovies(movies);
     return;
   }
 
-  clearMovies(); // 기존 영화 카드 삭제
-
-  fetch(
-    'https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1',
-    options
-  )
-    .then((response) => response.json())
-    .then((response) => {
-      const movies = response.results;
-      const filteredMovies = searchFilter(movies, searchText);
-      const moviesContainer = document.getElementById('movies');
-
-      filteredMovies.forEach((movie) => {
-        const template = `<div class="movie">
-          <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="" />
-          <h2 class="movieName">${movie.title}</h2>
-          <p class="movieSum">${movie.overview}</p>
-          <p class="movieRate">평점 ${movie.vote_average}</p>
-        </div>`;
-
-        moviesContainer.insertAdjacentHTML('beforeend', template);
-      });
-    })
-    .catch((error) => console.error(error));
+  const filteredMovies = searchFilter(movies, searchText);
+  displayMovies(filteredMovies);
 }
 
-// 기존 영화 카드를 삭제하는 함수
-function clearMovies() {
-  const moviesContainer = document.getElementById('movies');
-  moviesContainer.innerHTML = '';
+// 검색어 입력 이벤트를 감지하여 실시간으로 검색 실행
+function handleSearchInput() {
+  const searchInput = document.getElementById('input');
+  searchInput.addEventListener('input', function () {
+    search();
+  });
 }
 
 // 초기화 및 이벤트 리스너 설정
 function initialize() {
   fetchMovies();
+  handleSearchInput();
   document
     .getElementById('input')
     .addEventListener('keydown', function (event) {
       if (event.key === 'Enter') {
+        event.preventDefault(); // 기본 동작 방지
         search();
       }
     });

@@ -7,55 +7,84 @@ const options = {
   },
 };
 
-fetch(
-  'https://api.themoviedb.org/3/movie/now_playing?language=ko&page=1',
-  options
-)
-  .then((response) => response.json())
-  .then((response) => {
-    response.results.forEach((movie) => {
-      let template = `<div class="movie">
-                      <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="" />
-                      <h2 class="movieName">${movie.title}</h2>
-                      <p class="movieSum">${movie.overview}</p>
-                      <p class="movieRate">평점 ${movie.vote_average}</p>
-                      
-                    </div>`;
+let movies = []; // 영화 데이터를 저장할 배열
 
-      document
-        .querySelector('#movies')
-        .insertAdjacentHTML('beforeend', template);
-    });
-  })
-  .catch((err) => console.error(err));
-
-for (let i = 0; i < movies.length; i++) {
-  document.querySelectorAll('#movies')[i].innerText = movies[i].title;
+function fetchMovies() {
+  fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko', options)
+    .then((response) => response.json())
+    .then((response) => {
+      movies = response.results; // 영화 데이터를 배열에 저장
+      displayMovies(movies); // 영화 카드 표시 함수 호출
+    })
+    .catch((err) => console.error(err));
 }
 
-function searchFilter(data, search) {
-  // data 값을 하나하나 꺼내와서
-  return data.map((d) => {
-    // 만약 해당 데이터가 search 값을 가지고 있다면 리턴한다.
-    if (d.includes(search)) {
-      return d;
-    }
+// 영화 카드를 표시하는 함수
+function displayMovies(movies) {
+  const moviesContainer = document.getElementById('movies');
+
+  movies.forEach((movie) => {
+    const template = `<div class="movie">
+                        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="" />
+                        <h2 class="movieName">${movie.title}</h2>
+                        <p class="movieSum">${movie.overview}</p>
+                        <p class="movieRate">평점 ${movie.vote_average}</p>
+                      </div>`;
+
+    moviesContainer.insertAdjacentHTML('beforeend', template);
   });
 }
 
-// search 버튼 클릭 시 호출되는 함수
-function search() {
-  // 폼에 입력된 값
+// 검색어를 사용하여 영화를 필터링하는 함수
+function searchFilter(data, search) {
+  const searchKeywords = search.toLowerCase().split(' ');
 
-  let text = document.getElementById('input').value;
+  return data.filter((movie) => {
+    const movieTitle = movie.title.toLowerCase().replace(/\s/g, '');
 
-  // res [undefined, {id:, name: favorites:}, undefined] 이런식으로 리턴
-  // 따라서 undefined 값을 제거해줘야하기 때문에 filter 메소드 적용
-  let res = searchFilter(movies, text).filter((d) => d !== undefined);
-
-  // 결과 값 화면 출력
-  document.getElementById('movies').innerText = res.join(', ');
+    return searchKeywords.every((keyword) => movieTitle.includes(keyword));
+  });
 }
 
-// 클릭 시 search 함수 호출
-document.getElementById('btn').addEventListener('click', search);
+// 검색 버튼 클릭 시 호출되는 함수
+function search() {
+  const searchInput = document.getElementById('input');
+  const searchText = searchInput.value.trim().toLowerCase();
+  const moviesContainer = document.getElementById('movies');
+
+  // 기존 영화 카드 삭제
+  moviesContainer.innerHTML = '';
+
+  if (searchText === '') {
+    // 검색어가 없는 경우, 모든 영화를 다시 표시
+    displayMovies(movies);
+    return;
+  }
+
+  const filteredMovies = searchFilter(movies, searchText);
+  displayMovies(filteredMovies);
+}
+
+// 검색어 입력 이벤트를 감지하여 실시간으로 검색 실행
+function handleSearchInput() {
+  const searchInput = document.getElementById('input');
+  searchInput.addEventListener('input', function () {
+    search();
+  });
+}
+
+// 초기화 및 이벤트 리스너 설정
+function initialize() {
+  fetchMovies();
+  handleSearchInput();
+  document
+    .getElementById('input')
+    .addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        event.preventDefault(); // 기본 동작 방지
+        search();
+      }
+    });
+}
+
+initialize();

@@ -39,3 +39,38 @@ function createMovieCard(movie) {
 
   return card;
 }
+
+let cards = document.querySelector('.cards');
+let movie = Array.from(document.querySelectorAll('.movie')); // NodeList를 배열로 변환
+let currentIdx = 0;
+let slideCount = movie.length;
+let slideWidth = 247;
+let slideMargin = 20;
+
+function moveSlide(num) {
+  cards.style.left = -num * (slideWidth + slideMargin) + 'px';
+  currentIdx = num;
+}
+
+let timer = undefined;
+
+function autoSlide() {
+  if (timer == undefined) {
+    timer = setInterval(function () {
+      moveSlide(currentIdx + 1);
+    }, 200);
+  }
+}
+autoSlide();
+
+function stopSlide() {
+  clearInterval(timer);
+  timer = undefined;
+}
+
+cards.addEventListener('mouseenter', function () {
+  stopSlide();
+});
+cards.addEventListener('mouseleave', function () {
+  autoSlide();
+});
