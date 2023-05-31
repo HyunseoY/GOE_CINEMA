@@ -7,8 +7,6 @@ const options = {
   },
 };
 
-let movies = []; // 영화 데이터를 저장할 배열
-
 function fetchMovies() {
   fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko', options)
     .then((response) => response.json())
@@ -19,12 +17,14 @@ function fetchMovies() {
     .catch((err) => console.error(err));
 }
 
+let movies = []; // 영화 데이터를 저장할 배열
+
 // 영화 카드를 표시하는 함수
 function displayMovies(movies) {
   const moviesContainer = document.getElementById('movies');
 
   movies.forEach((movie) => {
-    const template = `<div class="movie">
+    const template = `<div class="movie" onclick="alert(${movie.id})">
                         <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="" />
                         <h2 class="movieName">${movie.title}</h2>
                         <p class="movieSum">${movie.overview}</p>
