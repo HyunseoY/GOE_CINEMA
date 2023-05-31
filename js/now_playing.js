@@ -17,8 +17,6 @@ function fetchMovies() {
     .catch((err) => console.error(err));
 }
 
-let movies = []; // 영화 데이터를 저장할 배열
-
 // 영화 카드를 표시하는 함수
 function displayMovies(movies) {
   const moviesContainer = document.getElementById('movies');
@@ -56,10 +54,11 @@ function search() {
 
 // 검색어를 사용하여 영화를 필터링하는 함수
 function searchFilter(data, search) {
+  const searchKeywords = search.toLowerCase().split(' ');
   return data.filter((movie) => {
     const movieTitle = movie.title.toLowerCase().replace(/\s/g, '');
 
-    return search.every((keyword) => movieTitle.includes(keyword));
+    return searchKeywords.every((keyword) => movieTitle.includes(keyword));
   });
 }
 
@@ -71,17 +70,17 @@ function handleSearchInput() {
   });
 }
 
-// // 초기화 및 이벤트 리스너 설정
-// function initialize() {
-//   fetchMovies();
-//   handleSearchInput();
-//   document
-//     .getElementById('input')
-//     .addEventListener('keydown', function (event) {
-//       if (event.key === 'Enter') {
-//         search();
-//       }
-//     });
-// }
+// 초기화 및 이벤트 리스너 설정
+function initialize() {
+  fetchMovies();
+  handleSearchInput();
+  document
+    .getElementById('input')
+    .addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        search();
+      }
+    });
+}
 
-// initialize();
+initialize();

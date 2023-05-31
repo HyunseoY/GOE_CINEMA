@@ -38,25 +38,14 @@ function displayMovies(movies) {
   });
 }
 
-// 검색어를 사용하여 영화를 필터링하는 함수
-function searchFilter(data, search) {
-  const searchKeywords = search.toLowerCase().split(' ');
-
-  return data.filter((movie) => {
-    const movieTitle = movie.title.toLowerCase().replace(/\s/g, '');
-
-    return searchKeywords.every((keyword) => movieTitle.includes(keyword));
-  });
-}
-
-// 검색 버튼 클릭 시 호출되는 함수
+// 검색어 입력 시 호출되는 함수
 function search() {
   const searchInput = document.getElementById('input');
-  const searchText = searchInput.value.trim().toLowerCase();
+  const searchText = searchInput.value;
   const moviesContainer = document.getElementById('movies');
 
   // 기존 영화 카드 삭제
-  moviesContainer.innerHTML = '';
+  moviesContainer.innerHTML = ' ';
 
   if (searchText === '') {
     // 검색어가 없는 경우, 모든 영화를 다시 표시
@@ -66,6 +55,16 @@ function search() {
 
   const filteredMovies = searchFilter(movies, searchText);
   displayMovies(filteredMovies);
+}
+
+// 검색어를 사용하여 영화를 필터링하는 함수
+function searchFilter(data, search) {
+  const searchKeywords = search.toLowerCase().split(' ');
+  return data.filter((movie) => {
+    const movieTitle = movie.title.toLowerCase().replace(/\s/g, '');
+
+    return searchKeywords.every((keyword) => movieTitle.includes(keyword));
+  });
 }
 
 // 검색어 입력 이벤트를 감지하여 실시간으로 검색 실행
@@ -84,7 +83,6 @@ function initialize() {
     .getElementById('input')
     .addEventListener('keydown', function (event) {
       if (event.key === 'Enter') {
-        event.preventDefault(); // 기본 동작 방지
         search();
       }
     });
