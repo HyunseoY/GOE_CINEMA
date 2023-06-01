@@ -99,6 +99,14 @@ header ul > li {
   margin-top: 10px;
 }
 
+#btn {
+  position: absolute;
+  height: 60px;
+  width: auto;
+  left: calc(70%); /* 가로 중앙 정렬 (버튼 너비의 절반을 뺌) */
+  transform: translateY(5%); /* 세로 중앙 정렬을 위한 변형 */
+}
+
 #btn img {
   position: absolute;
   height: 60px;
