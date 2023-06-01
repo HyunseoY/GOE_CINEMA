@@ -33,6 +33,8 @@ function displayMovies(movies) {
   });
 }
 
+fetchMovies();
+
 // 검색어 입력 시 호출되는 함수
 function search() {
   const searchInput = document.getElementById('input');
@@ -54,10 +56,13 @@ function search() {
 
 // 검색어를 사용하여 영화를 필터링하는 함수
 function searchFilter(data, search) {
-  const searchKeywords = search.toLowerCase().split(' ');
-  return data.filter((movie) => {
-    const movieTitle = movie.title.toLowerCase().replace(/\s/g, '');
+  const searchKeywords = search.toLowerCase().split(' '); // 검색어 모두 소문자로 전환
+  // 공백을 기준으로 분리하여 배열로 반환하는 문자열 메서드
+  // 예시) "Hello, world! This is an example." => ["Hello,", "world!", "This", "is", "an", "example."]
 
+  return data.filter((movie) => {
+    const movieTitle = movie.title.toLowerCase().replace(/\s/g, ''); // 정규 표현식을 사용하여 문자열에서 모든 공백을 제거하는 문자열 메서드
+    // 예시) "The Dark Knight" => "TheDarkKnight"
     return searchKeywords.every((keyword) => movieTitle.includes(keyword));
   });
 }
@@ -70,17 +75,15 @@ function handleSearchInput() {
   });
 }
 
-// 초기화 및 이벤트 리스너 설정
-function initialize() {
-  fetchMovies();
-  handleSearchInput();
-  document
-    .getElementById('input')
-    .addEventListener('keydown', function (event) {
-      if (event.key === 'Enter') {
-        search();
-      }
-    });
-}
+handleSearchInput();
 
-initialize();
+// 클릭 및 엔터 이벤트
+
+document.getElementById('input').addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') {
+    search();
+  }
+});
+document.getElementById('btn').addEventListener('click', function () {
+  search();
+});
