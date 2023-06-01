@@ -87,3 +87,9 @@ document.getElementById('input').addEventListener('keydown', function (event) {
 document.getElementById('btn').addEventListener('click', function () {
   search();
 });
+
+// 버튼 클릭 시 맨 위로 이동
+const topBtn = document.querySelector('.moveTopBtn');
+topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};

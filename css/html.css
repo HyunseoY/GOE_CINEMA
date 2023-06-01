@@ -218,3 +218,20 @@ header ul > li {
   width: auto;
   filter: invert(100%);
 }
+
+.moveTopBtn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.moveTopBtn img {
+  width: 50px;
+  height: auto;
+}
+
+.moveTopBtn:hover {
+  filter: invert(100%);
+}
