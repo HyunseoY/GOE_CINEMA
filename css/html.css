@@ -1,5 +1,6 @@
 body {
-  background-color: antiquewhite;
+  background: linear-gradient(#fcc7a7, #f83632 300px);
+  background-repeat: no-repeat;
 }
 
 ul {
@@ -9,13 +10,25 @@ ul {
 a {
   text-decoration: none;
   outline: none;
+  color: #a6181e;
+}
+
+a:hover {
+  color: #f83632;
+  text-shadow: 2px 2px 2px gray;
+}
+
+.current {
+  color: #f83632;
 }
 
 header {
   width: 100%;
   height: 100px;
   display: flex;
-  background-color: white;
+  background-image: url('./네비바.png');
+  background-repeat: no-repeat;
+  background-position: center;
   font-family: 'Black Han Sans', sans-serif;
 }
 
@@ -33,6 +46,7 @@ header ul {
   justify-content: space-between;
   margin: auto;
   padding-left: 0px;
+  padding-top: 5px;
 }
 
 .goe {
@@ -46,18 +60,43 @@ header ul > li {
   align-items: center;
 }
 
-.search {
-  height: 100px;
+.bulb img {
+  text-align: center;
   display: block;
-  align-items: center;
-  justify-content: space-between;
+  margin: 0 auto;
+}
 
-  margin-top: -68px;
-  margin-left: 87%;
+.search {
+  height: 245px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 변경: 세로 중앙 정렬 */
+  align-items: center; /* 변경: 가로 중앙 정렬 */
+  background-image: url(./검색창.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 2%;
+}
+
+.search p,
+.search input {
+  margin: 0; /* 기본 마진 제거 */
+}
+
+.search p {
+  font-size: 30px;
+  color: #271e19;
+  font-weight: bold;
 }
 
 #input {
-  height: 30px;
+  width: 40%;
+  height: 50px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+  margin-top: 10px;
 }
 
 .container {
@@ -79,12 +118,18 @@ header ul > li {
   display: grid;
   text-align: center;
   place-items: center;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 8px;
   padding: none;
   margin-bottom: 16px;
   overflow: hidden;
   transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+  background-color: white;
+}
+
+.movie:hover {
+  box-shadow: 0 3px 15px rgb(253, 234, 128);
+  cursor: pointer;
 }
 
 .clone {
@@ -119,4 +164,37 @@ header ul > li {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.foot {
+  height: 120px;
+  background-color: #271e19;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.footContents {
+  width: 1000px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.logo {
+  height: 110px;
+  width: auto;
+}
+
+.email {
+  color: rgb(197, 197, 197);
+}
+
+.icons img {
+  height: 50px;
+  width: auto;
+  filter: invert(100%);
 }

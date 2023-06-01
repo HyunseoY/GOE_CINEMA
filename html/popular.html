@@ -17,7 +17,7 @@
     <header>
       <nav>
         <ul>
-          <li><a href="./popular.html">인기영화</a></li>
+          <li><a class="current" href="./popular.html">인기영화</a></li>
           <li><a href="./now_playing.html">현재상영</a></li>
           <li class="goe"><a href="../index.html">GOE's CINEMA</a></li>
           <li><a href="./top_rated.html">높은평점</a></li>
@@ -25,7 +25,13 @@
         </ul>
       </nav>
     </header>
+
+    <div class="bulb">
+      <img src="../css/전구.png" alt="" />
+    </div>
+
     <div class="search">
+      <p>최고의 인기영화를 한눈에</p>
       <input
         id="input"
         type="search"
@@ -41,11 +47,30 @@
 
       <div class="container">
         <div class="cards" id="movies"></div>
-        <div id="searchResults"></div>
       </div>
     </main>
 
-    <footer></footer>
+    <footer class="foot">
+      <div class="footContents">
+        <a href="../index.html">
+          <img class="logo" src="../css/logo.png" alt="" />
+        </a>
+
+        <p class="email">
+          Contect <a class="email">maricat0715@gmail.com</a> for more
+          information
+        </p>
+
+        <div class="icons">
+          <a class="icon" href="https://github.com/HyunseoY"
+            ><img src="../css/깃허브 logo.png" alt=""
+          /></a>
+          <a class="icon" href="https://goe-coding.tistory.com/"
+            ><img src="../css/티스토리 logo.png" alt=""
+          /></a>
+        </div>
+      </div>
+    </footer>
     <script src="../js/popular.js"></script>
   </body>
 </html>
