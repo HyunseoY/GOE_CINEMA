@@ -11,7 +11,7 @@
 
 ### 2. 주소
 
-[GOE's CINEMA](https://hyunseoy.github.io/GOE_CINEMA/index.html)
+[GOE's CINEMA](https://hyunseoy.github.io/GOE_CINEMA/)
 
 ### 3. S.A
 
