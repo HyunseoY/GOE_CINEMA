@@ -31,7 +31,7 @@
     </div>
 
     <div class="search">
-      <p>평점이 높은 영화를 한눈에</p>
+      <p>Highly rated movies</p>
       <input
         id="input"
         type="text"
@@ -73,6 +73,11 @@
       </div>
     </footer>
     <div class="moveTopBtn"><img src="../css/top.png" alt="" /></div>
-    <script src="../js/top_rated.js"></script>
+    <script src="../js/html.js"></script>
+    <script>
+      fetchMovies(
+        'https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1'
+      );
+    </script>
   </body>
 </html>

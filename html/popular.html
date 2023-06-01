@@ -31,7 +31,7 @@
     </div>
 
     <div class="search">
-      <p>최고의 인기영화를 한눈에</p>
+      <p>The most popular movies</p>
       <input
         id="input"
         type="text"
@@ -73,6 +73,11 @@
       </div>
     </footer>
     <div class="moveTopBtn"><img src="../css/top.png" alt="" /></div>
-    <script src="../js/popular.js"></script>
+    <script src="../js/html.js"></script>
+    <script>
+      fetchMovies(
+        'https://api.themoviedb.org/3/movie/popular?language=ko&page=1'
+      );
+    </script>
   </body>
 </html>

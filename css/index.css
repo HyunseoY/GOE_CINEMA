@@ -61,17 +61,20 @@ header ul > li {
   height: 245px;
   margin-top: 2%;
   margin-bottom: 2%;
-  text-align: center;
   display: flex;
-  flex-direction: column;
+  text-align: center;
   justify-content: center;
   align-items: center;
   background-image: url(./검색창.png);
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.pageInt .text {
   color: #271e19;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 50px;
+  font-family: 'Black Han Sans', sans-serif;
 }
 
 .bulb img {

@@ -32,7 +32,7 @@
     </div>
 
     <div class="search">
-      <p>현재 상영 중인 영화를 한눈에</p>
+      <p>Movies currently playing</p>
       <input
         id="input"
         type="text"
@@ -70,6 +70,11 @@
       </div>
     </footer>
     <div class="moveTopBtn"><img src="../css/top.png" alt="" /></div>
-    <script src="../js/now_playing.js"></script>
+    <script src="../js/html.js"></script>
+    <script>
+      fetchMovies(
+        'https://api.themoviedb.org/3/movie/now_playing?language=ko&page=1'
+      );
+    </script>
   </body>
 </html>

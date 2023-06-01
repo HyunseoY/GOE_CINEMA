@@ -64,8 +64,7 @@ function createMovieCard(movie) {
 
 // 클릭 시 인기영화 페이지로 이동
 function showMovieDetail() {
-  const url = (href = '../html/popular.html');
-  window.location.href = url;
+  window.location.href = '../html/popular.html';
 }
 
 // 여기부터 슬라이드 관련 함수들

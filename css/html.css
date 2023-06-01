@@ -84,9 +84,10 @@ header ul > li {
 }
 
 .search p {
-  font-size: 30px;
+  font-size: 50px;
   color: #271e19;
   font-weight: bold;
+  font-family: 'Black Han Sans', sans-serif;
 }
 
 #input {
