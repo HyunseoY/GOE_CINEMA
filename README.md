@@ -24,16 +24,13 @@
 ### 5. 구현 기능
 
 ### 1) 홈 화면 및 인기영화 자동 슬라이드
-![CleanShot 2023-01-18 at 23 28 03](https://user-images.githubusercontent.com/76584961/213198276-d37c693a-7c22-443f-94fd-3f612cd0bc39.png)
-![CleanShot 2023-01-18 at 23 27 53](https://user-images.githubusercontent.com/76584961/213198300-527c7ca8-cb0c-434a-90da-ab10b88aa569.png)
+![홈화면](https://github.com/HyunseoY/GOE_CINEMA/assets/130683029/531a84d5-8dbd-4ca7-b9cf-8166b8be6a39)
 
 ### 2) 카테고리별 영화 페이지
-![CleanShot 2023-01-18 at 23 30 24](https://user-images.githubusercontent.com/76584961/213198375-f048d3e8-ee7a-4e76-9078-23a3cc1d03b0.png)
-![CleanShot 2023-01-18 at 23 30 28](https://user-images.githubusercontent.com/76584961/213198384-02c7accc-7646-4b50-a91f-ce2405cacc65.png)
+![카테고리별 검색 화면](https://github.com/HyunseoY/GOE_CINEMA/assets/130683029/91609f0b-22c8-4b3d-8409-396a68ffeed7)
 
 ### 3) 검색 시 실시간으로 필터링
-![CleanShot 2023-01-18 at 23 30 38](https://user-images.githubusercontent.com/76584961/213198456-a3022792-f3fe-46dc-a2b0-84f3c3cf4c98.png)
-![CleanShot 2023-01-18 at 23 30 42](https://user-images.githubusercontent.com/76584961/213198472-41b231b3-1e63-4cc4-a148-0b7e425a93a3.png)
+![검색화면](https://github.com/HyunseoY/GOE_CINEMA/assets/130683029/5e733334-15da-40c4-a633-0ddb4f33f9f1)
 
 ### 6. 아쉬운점 (추가하고 싶은 기능)
 <p>1)원래는 영화별로 상세페이지를 모달로 띄워서 더 많은 정보를 표시</p>
