@@ -27,21 +27,25 @@
 ### 5. 구현 기능
 
 ### 1) 홈 화면 및 인기영화 자동 슬라이드
-![홈화면](https://github.com/HyunseoY/GOE_CINEMA/assets/130683029/531a84d5-8dbd-4ca7-b9cf-8166b8be6a39)
+![홈](https://github.com/HyunseoY/GOE_CINEMA/assets/130683029/ef6ff538-177a-46bb-9878-e5312fb48949)
 
 ### 2) 카테고리별 영화 페이지
-![카테고리별 검색 화면](https://github.com/HyunseoY/GOE_CINEMA/assets/130683029/91609f0b-22c8-4b3d-8409-396a68ffeed7)
+![검색](https://github.com/HyunseoY/GOE_CINEMA/assets/130683029/fe394f0f-7dd6-4115-a78b-daa5880556c5)
 
 ### 3) 검색 시 실시간 반영되어 결과 도출
-![검색화면](https://github.com/HyunseoY/GOE_CINEMA/assets/130683029/5e733334-15da-40c4-a633-0ddb4f33f9f1)
+![실시간반영](https://github.com/HyunseoY/GOE_CINEMA/assets/130683029/1b664645-fa08-4752-b980-cbf7ec578bfa)
 
 ### 4) 하단 푸터
-![스크린샷 2023-06-01 201005](https://github.com/HyunseoY/GOE_CINEMA/assets/130683029/5894ddb0-4755-4804-a629-4dc142e84edd)
+![푸터](https://github.com/HyunseoY/GOE_CINEMA/assets/130683029/d54c3886-2412-4e8f-9118-9090c609f502)
+![푸터호버](https://github.com/HyunseoY/GOE_CINEMA/assets/130683029/eb40add8-2539-491b-b204-b3b22dcebe8b)
  로고 클릭 시 홈화면으로 이동 / 깃허브 아이콘 클릭 시 제작자 깃허브 주소로 이동 / 티스토리 아이콘 클릭 시 제작자 블로그로 이동
 
 
 ### 6. 아쉬운점 (추가하고 싶은 기능)
 <p>1)원래는 영화별로 상세페이지를 모달로 띄워서 더 많은 정보를 표시</p>
 <p>2)검색어 입력 시 현재 페이지 위치에 상관없이(카테고리에 상관없이) 해당되는 영화를 검색</p> 
+
+
+
 
 
