@@ -35,6 +35,7 @@
 
 ### 3) 검색 시 실시간 반영되어 결과 도출
 ![실시간반영](https://github.com/HyunseoY/GOE_CINEMA/assets/130683029/1b664645-fa08-4752-b980-cbf7ec578bfa)
+띄어쓰기에 상관없이 검색가능/대소문자 구분 없음
 
 ### 4) 하단 푸터
 ![푸터](https://github.com/HyunseoY/GOE_CINEMA/assets/130683029/d54c3886-2412-4e8f-9118-9090c609f502)
