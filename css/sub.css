@@ -1,1 +1,63 @@
 @import url(index.css);
+
+/* section : desc-container */
+.desc-container  {
+    font-size: 18px;
+    background-color: #C49A6C;
+    width: 70%;
+    height: 70vh;
+    margin: 80px auto;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.desc-box {
+    border: 3px solid #AA232B;
+    border-radius: 10px;
+    margin: 0 100px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.desc-box .movie-img {
+    overflow: hidden;
+}
+
+.desc-box .movie-img img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.desc-box .movie-desc {
+    border-left: 3px solid #AA232B;
+    line-height: 46px;
+    display: grid;
+    grid-template-rows: 50px 1fr 50px;
+}
+
+.desc-box .movie-desc h2 {
+    margin: 0;
+    border-bottom: 3px solid #AA232B;
+    padding-left: 30px;
+}
+
+.desc-box .movie-desc p {
+    line-height: 30px;
+    margin: 0;
+    padding: 0 30px;
+    border-bottom: 3px solid #AA232B;
+}
+
+.desc-box .movie-desc span {
+    padding-left: 30px;
+}
+
+/* 태블릿 */
+/* @media all and (max-width:1024px) {
+    .desc-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} */

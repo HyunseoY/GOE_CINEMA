@@ -80,6 +80,7 @@ header ul > li {
 }
 
 .bulb img {
+  width: 100%;
   text-align: center;
   display: block;
   margin: 0 auto;
