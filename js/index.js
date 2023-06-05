@@ -24,13 +24,12 @@ fetch('https://api.themoviedb.org/3/movie/popular?language=ko&page=1', options)
     // 초기 카드 배치
     let cards = document.querySelector('.cards');
     let movie = document.querySelectorAll('.movie'); // NodeList를 배열로 변환
-    let slideCount = movie.length;
 
     makeClone();
 
     function makeClone() {
       // 뒤에 복제
-      for (let i = 0; i < slideCount; i++) {
+      for (let i = 0; i < 6; i++) {
         let cloneSlide =
           // a.cloneNode() a요소를 그대로 복사
           // a.cloneNode(true) a요소에 자식요소까지 모두 복사
@@ -102,6 +101,7 @@ function moveSlide(num) {
       cards.classList.add('animated');
     }, 1050);
   }
+  console.log(currentIdx, 20);
 }
 
 let timer = undefined;
