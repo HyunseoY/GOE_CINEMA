@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,17 +17,19 @@
     <header>
       <nav>
         <ul>
-          <li><a href="./popular.html">인기영화</a></li>
-          <li><a href="./now_playing.html">현재상영</a></li>
+          <li><a href="../popular/popular.html">인기영화</a></li>
+          <li><a href="../nowPlaying/now_playing.html">현재상영</a></li>
           <li class="goe"><a href="../index.html">GOE's CINEMA</a></li>
-          <li><a href="./top_rated.html">높은평점</a></li>
-          <li><a class="current" href="./upcoming.html">개봉예정</a></li>
+          <li><a href="../topRated/top_rated.html">높은평점</a></li>
+          <li>
+            <a class="current" href="../upcoming/upcoming.html">개봉예정</a>
+          </li>
         </ul>
       </nav>
     </header>
 
     <div class="bulb">
-      <img src="../css/전구.png" alt="" />
+      <img src="../img/전구.png" alt="" />
     </div>
 
     <div class="search">
@@ -38,7 +40,7 @@
         autocomplete="off"
         placeholder="영화 제목을 입력하세요"
       />
-      <span id="btn"><img src="../css/search.png" alt="" /></span>
+      <span id="btn"><img src="../img/search.png" alt="" /></span>
     </div>
 
     <main>
@@ -54,7 +56,7 @@
     <footer class="foot">
       <div class="footContents">
         <a href="../index.html">
-          <img class="logo" src="../css/logo.png" alt="" />
+          <img class="logo" src="../img/logo.png" alt="" />
         </a>
 
         <p class="email">
@@ -64,20 +66,15 @@
 
         <div class="icons">
           <a class="icon" href="https://github.com/HyunseoY"
-            ><img src="../css/깃허브 logo.png" alt=""
+            ><img src="../img/깃허브 logo.png" alt=""
           /></a>
           <a class="icon" href="https://goe-coding.tistory.com/"
-            ><img src="../css/티스토리 logo.png" alt=""
+            ><img src="../img/티스토리 logo.png" alt=""
           /></a>
         </div>
       </div>
     </footer>
-    <div class="moveTopBtn"><img src="../css/top.png" alt="" /></div>
-    <script src="../js/html.js"></script>
-    <script>
-      fetchMovies(
-        'https://api.themoviedb.org/3/movie/upcoming?language=ko&page=1'
-      );
-    </script>
+    <div class="moveTopBtn"><img src="../img/top.png" alt="" /></div>
+    <script src="/upcoming/upcoming.js"></script>
   </body>
 </html>

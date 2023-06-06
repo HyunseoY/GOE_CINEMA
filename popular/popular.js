@@ -7,43 +7,29 @@ const options = {
   },
 };
 
-function fetchMovies(url) {
-  fetch(url, options)
-    .then((response) => response.json())
-    .then((response) => {
-      movies = response.results;
-      displayMovies(movies);
-    })
-    .catch((err) => console.error(err));
-}
+fetch("https://api.themoviedb.org/3/movie/popular?language=ko&page=1", options)
+  .then((response) => response.json())
+  .then((response) => {
+    movies = response.results;
+    console.log(movies);
+    displayMovies(movies);
+  })
+  .catch((err) => console.error(err));
 
 // 영화 카드를 표시하는 함수
-export function displayMovies(movies) {
+function displayMovies(movies) {
   const moviesContainer = document.getElementById("movies");
 
   movies.forEach((movie) => {
     const template = `<div class="movie" onclick="alert(${movie.id})">
-                        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="" />
-                        <h2 class="movieName">${movie.title}</h2>
-                        <p class="movieSum">${movie.overview}</p>
-                        <p class="movieRate">평점 ${movie.vote_average}</p>
-                      </div>`;
+                            <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="" />
+                            <h2 class="movieName">${movie.title}</h2>
+                            <p class="movieSum">${movie.overview}</p>
+                            <p class="movieRate">평점 ${movie.vote_average}</p>
+                          </div>`;
 
     moviesContainer.insertAdjacentHTML("beforeend", template);
   });
-}
-
-// 검색어 입력 시 호출되는 함수
-function search() {
-  const searchInput = document.getElementById("input");
-  const searchText = searchInput.value;
-  const moviesContainer = document.getElementById("movies");
-
-  // 기존 영화 카드 삭제
-  moviesContainer.innerHTML = " ";
-
-  const filteredMovies = searchFilter(searchText);
-  displayMovies(filteredMovies);
 }
 
 // 검색어를 사용하여 영화를 필터링하는 함수
@@ -59,7 +45,14 @@ function searchFilter(search) {
 function handleSearchInput() {
   const searchInput = document.getElementById("input");
   searchInput.addEventListener("input", function () {
-    search();
+    const searchText = searchInput.value;
+    const moviesContainer = document.getElementById("movies");
+
+    // 기존 영화 카드 삭제
+    moviesContainer.innerHTML = " ";
+
+    const filteredMovies = searchFilter(searchText);
+    displayMovies(filteredMovies);
   });
 }
 
