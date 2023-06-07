@@ -217,14 +217,21 @@ header ul > li {
   width: auto;
 }
 
-.email {
+.teamName {
   color: rgb(197, 197, 197);
 }
 
 .icons img {
   height: 50px;
   width: auto;
+}
+
+.icon1 img {
   filter: invert(100%);
+}
+
+.icon2 img {
+  border-radius: 9px;
 }
 
 .moveTopBtn {
