@@ -21,7 +21,7 @@ export const displayMovies = (movies) => {
   const moviesContainer = document.getElementById("movies");
 
   movies.forEach((movie) => {
-    const template = `<div class="movie" onclick="alert(${movie.id})">
+    const template = `<div class="movie" id="${movie.id}">
                               <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="" />
                               <h2 class="movieName">${movie.title}</h2>
                               <p class="movieSum">${movie.overview}</p>
