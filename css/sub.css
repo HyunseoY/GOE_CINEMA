@@ -1,0 +1,62 @@
+@import url(index.css);
+
+section, main {
+    margin: 0;
+}
+
+/* section : desc-container */
+.desc-container  {
+    font-size: 18px;
+    background-color: #d2d2d2;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.bg-box img {
+    width: 100%;
+    display: block;
+}
+
+.desc-box {
+    position: absolute;
+    top: 115px;
+    left: 20%;
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.desc-box .movie-img img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.desc-box .movie-desc {
+    line-height: 46px;
+    display: grid;
+    grid-template-rows: 50px 1fr 50px;
+    padding: 0 30px;
+}
+
+.desc-box .movie-desc h2 {
+    margin: 0;
+    border-bottom: 3px solid #AA232B;
+}
+
+.desc-box .movie-desc p {
+    line-height: 30px;
+    margin: 0;
+    border-bottom: 3px solid #AA232B;
+}
+
+.comment-container {
+    overflow: hidden;
+    height: 100%;
+}
+
+.comment-container img {
+    width: 100%;
+    display: block;
+}

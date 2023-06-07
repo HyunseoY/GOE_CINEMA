@@ -1,6 +1,8 @@
 body {
   background: linear-gradient(#fcc7a7, #5c0409 200px);
   background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
 }
 
 ul {
@@ -78,6 +80,7 @@ header ul > li {
 }
 
 .bulb img {
+  width: 100%;
   text-align: center;
   display: block;
   margin: 0 auto;
