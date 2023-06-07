@@ -8,14 +8,10 @@ section, main {
 .desc-container  {
     font-size: 18px;
     background-color: #d2d2d2;
-    height: 100vh;
     overflow: hidden;
     position: relative;
 }
 
-.bg-box {
-    height: 100%;
-}
 
 .bg-box img {
     width: 100%;
@@ -30,8 +26,6 @@ section, main {
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
-
-.desc-box .movie-img {}
 
 .desc-box .movie-img img {
     width: 100%;
