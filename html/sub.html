@@ -11,31 +11,26 @@
       rel="stylesheet"
     />
     <title>GOE's CINEMA</title>
-    <link rel="stylesheet" type="text/css" href="./css/sub.css" />
+    <link rel="stylesheet" type="text/css" href="../css/sub.css" />
   </head>
 
   <body>
     <header>
       <nav>
         <ul>
-          <li><a href="./html/popular.html">인기영화</a></li>
-          <li><a href="./html/now_playing.html">현재상영</a></li>
-          <li><a class="goe" href="./index.html">GOE's CINEMA</a></li>
-          <li><a href="./html/top_rated.html">높은평점</a></li>
-          <li><a href="./html/upcoming.html">개봉예정</a></li>
+          <li><a href="../html/popular.html">인기영화</a></li>
+          <li><a href="../html/now_playing.html">현재상영</a></li>
+          <li><a class="goe" href="../index.html">GOE's CINEMA</a></li>
+          <li><a href="../html/top_rated.html">높은평점</a></li>
+          <li><a href="../html/upcoming.html">개봉예정</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- 전구 -->
-    <div class="bulb">
-      <img src="./css/전구.png" alt="" />
-    </div>
-
     <!-- main : desc-container -->
     <main class="desc-container">
       <div class="bg-box">
-        <img src="./img/pngegg2.png" alt="영화관 배경" />
+        <img src="../img/pngegg2.png" alt="영화관 배경" />
         <div class="desc-box">
           <div class="movie-img">
             <img
@@ -52,19 +47,39 @@
               deleniti ut repellendus ipsa deserunt, veniam labore odio est
               voluptas minus eos nihil unde?
             </p>
+
+            <div class="commentBox">
+            <form id="commentForm">
+              <label for="username"></label>
+              <input type="text" id="username" placeholder="작성자" required />
+        
+              <label for="password"></label>
+              <input type="password" id="password" placeholder="비밀번호" required /></br>
+        
+              <label for="comment"></label>
+              <textarea
+                id="comment"
+                required
+                placeholder="영화평을 입력하세요"
+              ></textarea>
+              <button id="commentBtn" type="submit"><img src="../img/submit.png" alt="" /></button>
+            </form>
+            <div id="commentList"></div>
+          </div>
+
             <span><strong>평점 : 8.5</strong></span>
           </div>
         </div>
       </div>
     </main>
-    <section class="comment-container">
-      <img src="./img/sub_bg.png" alt="영화관 의자" />
+    <section class="chair-container">
+      <img src="../img/sub_bg.png" alt="영화관 의자" />
     </section>
 
     <footer class="foot">
       <div class="footContents">
-        <a href="./index.html">
-          <img class="logo" src="./css/logo.png" alt="" />
+        <a href="../index.html">
+          <img class="logo" src="../img/logo.png" alt="" />
         </a>
 
         <p class="email">
@@ -74,13 +89,14 @@
 
         <div class="icons">
           <a class="icon" href="https://github.com/HyunseoY"
-            ><img src="./css/깃허브 logo.png" alt=""
+            ><img src="../img/깃허브 logo.png" alt=""
           /></a>
           <a class="icon" href="https://goe-coding.tistory.com/"
-            ><img src="./css/티스토리 logo.png" alt=""
+            ><img src="../img/티스토리 logo.png" alt=""
           /></a>
         </div>
       </div>
     </footer>
+    <script src="../js/comment.js"></script>
   </body>
 </html>

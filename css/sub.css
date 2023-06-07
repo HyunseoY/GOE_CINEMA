@@ -1,62 +1,137 @@
 @import url(index.css);
 
-section, main {
-    margin: 0;
+section,
+main {
+  margin: 0;
 }
 
 /* section : desc-container */
-.desc-container  {
-    font-size: 18px;
-    background-color: #d2d2d2;
-    overflow: hidden;
-    position: relative;
+.desc-container {
+  font-size: 18px;
+  background-color: #d2d2d2;
+  overflow: hidden;
+  position: relative;
 }
 
-
 .bg-box img {
-    width: 100%;
-    display: block;
+  width: 100%;
+  display: block;
 }
 
 .desc-box {
-    position: absolute;
-    top: 115px;
-    left: 20%;
-    width: 60%;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+  position: absolute;
+  top: 115px;
+  left: 20%;
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
 .desc-box .movie-img img {
-    width: 100%;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .desc-box .movie-desc {
-    line-height: 46px;
-    display: grid;
-    grid-template-rows: 50px 1fr 50px;
-    padding: 0 30px;
+  height: 80%;
+  padding: 0 30px;
 }
 
 .desc-box .movie-desc h2 {
-    margin: 0;
-    border-bottom: 3px solid #AA232B;
+  margin: 0;
+  border-bottom: 3px solid #aa232b;
 }
 
 .desc-box .movie-desc p {
-    line-height: 30px;
-    margin: 0;
-    border-bottom: 3px solid #AA232B;
+  height: 50px;
+  margin: none;
 }
 
-.comment-container {
-    overflow: hidden;
-    height: 100%;
+.desc-box .movie-desc span {
+  line-height: 30px;
+  margin: 0;
+  border-top: 3px solid #aa232b;
 }
 
-.comment-container img {
-    width: 100%;
-    display: block;
+.chair-container {
+  overflow: hidden;
+  height: 100%;
+}
+
+.chair-container img {
+  width: 100%;
+  display: block;
+}
+
+/* 양 추가사항 */
+.commentBox {
+  overflow-y: scroll;
+  margin-top: 100px;
+  height: 150px;
+}
+
+.commentBox form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.commentBox input[type='text'],
+.commentBox input[type='password'] {
+  flex: 1 0 40%;
+  box-sizing: border-box;
+  margin: 0;
+  outline-style: none;
+}
+
+.commentBox textarea {
+  flex: 1 0 70%;
+  box-sizing: border-box;
+  resize: none;
+  outline-style: none;
+  width: 85%;
+  float: left;
+}
+
+#commentBtn {
+  width: 14.5%;
+  height: 35px;
+  float: right;
+  border: solid 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#commentBtn img {
+  height: 35px;
+  width: auto;
+}
+
+.writtenComment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.btn {
+  margin-left: 50%;
+}
+
+button {
+  all: unset;
+}
+
+#edit {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  filter: contrast(0%);
+}
+
+#delete {
+  width: 20px;
+  height: 20px;
+  filter: contrast(0%);
 }
