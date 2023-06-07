@@ -14,11 +14,12 @@ section, main {
 }
 
 .bg-box {
-    /* border: 10px solid magenta; */
+    height: 100%;
 }
 
 .bg-box img {
     width: 100%;
+    display: block;
 }
 
 .desc-box {
@@ -56,18 +57,12 @@ section, main {
     border-bottom: 3px solid #AA232B;
 }
 
-.test {
+.comment-container {
     overflow: hidden;
     height: 100%;
 }
 
-.test img {
+.comment-container img {
     width: 100%;
+    display: block;
 }
-
-/* 태블릿 */
-/* @media all and (max-width:1024px) {
-    .desc-box {
-        grid-template-columns: repeat(2, 1fr);
-    }
-} */
