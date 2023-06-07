@@ -30,6 +30,12 @@ function handleSearchInput() {
     const filteredMovies = searchFilter(searchText, movies);
     displayMovies(filteredMovies);
   });
+
+  const movieList = document.querySelector(".cards");
+  movieList.addEventListener("click", ({ target }) => {
+    const movieItem = target.closest("div");
+    location.replace("/sub.html?id=" + movieItem.id);
+  });
 }
 
 handleSearchInput();

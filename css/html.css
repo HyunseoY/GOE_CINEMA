@@ -5,6 +5,7 @@
 body {
   background: linear-gradient(#fcc7a7, #5c0409 200px);
   background-repeat: no-repeat;
+  margin: 0;
 }
 
 ul {
