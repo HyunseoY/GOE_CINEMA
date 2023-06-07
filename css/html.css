@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: linear-gradient(#fcc7a7, #5c0409 200px);
   background-repeat: no-repeat;
@@ -61,9 +65,8 @@ header ul > li {
 }
 
 .bulb img {
-  text-align: center;
+  width: 100%;
   display: block;
-  margin: 0 auto;
 }
 
 .search {
@@ -90,12 +93,16 @@ header ul > li {
   font-family: "Black Han Sans", sans-serif;
 }
 
-#input {
+.search-form {
   width: 40%;
   height: 50px;
+}
+
+#input {
+  width: 100%;
+  height: 100%;
   text-align: center;
   display: block;
-  margin: 0 auto;
   font-size: 20px;
   margin-top: 10px;
 }
@@ -105,14 +112,15 @@ header ul > li {
   height: 60px;
   width: auto;
   left: calc(70%); /* 가로 중앙 정렬 (버튼 너비의 절반을 뺌) */
-  transform: translateY(25%); /* 세로 중앙 정렬을 위한 변형 */
+  transform: translateY(-150%); /* 세로 중앙 정렬을 위한 변형 */
+  background-color: transparent;
+  border: none;
 }
 
 #btn img {
   position: absolute;
   height: 60px;
   width: auto;
-  top: 33.6%;
   right: 30%;
 }
 
@@ -127,21 +135,19 @@ header ul > li {
 }
 
 .cards {
+  justify-content: center;
   width: 1100px;
-  height: auto;
   margin: 3% auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, 258px);
   grid-column-gap: 2%;
 }
 
 .movie {
   display: grid;
   text-align: center;
-  place-items: center;
   border: none;
   border-radius: 8px;
-  padding: none;
   margin-bottom: 16px;
   overflow: hidden;
   transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);

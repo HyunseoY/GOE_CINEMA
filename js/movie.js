@@ -31,13 +31,3 @@ export const displayMovies = (movies) => {
     moviesContainer.insertAdjacentHTML("beforeend", template);
   });
 };
-
-// // 클릭 및 엔터 이벤트
-// document.getElementById("input").addEventListener("keydown", function (event) {
-//   if (event.key === "Enter") {
-//     search();
-//   }
-// });
-// document.getElementById("btn").addEventListener("click", function () {
-//   search();
-// });
