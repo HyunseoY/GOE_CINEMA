@@ -8,15 +8,16 @@ fetch("https://api.themoviedb.org/3/movie/popular?language=ko&page=1", options)
   .then((response) => response.json())
   .then((response) => {
     movies = response.results;
-    console.log(movies);
     displayMovies(movies);
   })
   .catch((err) => console.error(err));
 
-// 검색어 입력 이벤트를 감지하여 실시간으로 검색 실행
 function handleSearchInput() {
-  const searchInput = document.getElementById("input");
-  searchInput.addEventListener("input", function () {
+  const searchForm = document.querySelector(".search-form");
+  searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const searchInput = document.getElementById("input");
     const searchText = searchInput.value;
     const moviesContainer = document.getElementById("movies");
 
