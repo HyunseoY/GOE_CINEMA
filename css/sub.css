@@ -1,29 +1,36 @@
 @import url(index.css);
 
+section, main {
+    margin: 0;
+}
+
 /* section : desc-container */
 .desc-container  {
     font-size: 18px;
-    background-color: #C49A6C;
-    width: 70%;
-    height: 70vh;
-    margin: 80px auto;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
+    background-color: #d2d2d2;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg-box {
+    /* border: 10px solid magenta; */
+}
+
+.bg-box img {
+    width: 100%;
 }
 
 .desc-box {
-    border: 3px solid #AA232B;
-    border-radius: 10px;
-    margin: 0 100px;
-    overflow: hidden;
+    position: absolute;
+    top: 115px;
+    left: 20%;
+    width: 60%;
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
 
-.desc-box .movie-img {
-    overflow: hidden;
-}
+.desc-box .movie-img {}
 
 .desc-box .movie-img img {
     width: 100%;
@@ -32,27 +39,30 @@
 }
 
 .desc-box .movie-desc {
-    border-left: 3px solid #AA232B;
     line-height: 46px;
     display: grid;
     grid-template-rows: 50px 1fr 50px;
+    padding: 0 30px;
 }
 
 .desc-box .movie-desc h2 {
     margin: 0;
     border-bottom: 3px solid #AA232B;
-    padding-left: 30px;
 }
 
 .desc-box .movie-desc p {
     line-height: 30px;
     margin: 0;
-    padding: 0 30px;
     border-bottom: 3px solid #AA232B;
 }
 
-.desc-box .movie-desc span {
-    padding-left: 30px;
+.test {
+    overflow: hidden;
+    height: 100%;
+}
+
+.test img {
+    width: 100%;
 }
 
 /* 태블릿 */
