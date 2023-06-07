@@ -2,20 +2,22 @@
 // 삭제, 수정도 할 수 있으려나..
 
 const commentForm = document.getElementById('commentForm');
-const commentDiv = document.getElementById('commentDiv');
+const commentList = document.getElementById('commentList');
 
 commentForm.addEventListener('submit', saveComment);
 displayComments();
 
+// 코멘트 표시 (1)
 function displayComments() {
   const comments = JSON.parse(localStorage.getItem('comments')) || [];
-  commentDiv.innerHTML = comments.length
+  commentList.innerHTML = comments.length
     ? comments
         .map((comment, index) => createCommentHTML(comment, index))
         .join('')
     : '저장된 댓글이 없습니다.';
 }
 
+// 코멘트 표시 (2)
 function createCommentHTML(comment, index) {
   return `
                 <div>
@@ -27,12 +29,9 @@ function createCommentHTML(comment, index) {
               `;
 }
 
+// 새 코멘트 저장
 function saveComment(event) {
   event.preventDefault();
-  if (!commentForm.checkValidity()) {
-    commentForm.reportValidity();
-    return;
-  }
   const username = document.getElementById('username').value;
   const comment = document.getElementById('comment').value;
   const password = document.getElementById('password').value;
@@ -43,6 +42,7 @@ function saveComment(event) {
   displayComments();
 }
 
+// 코멘트 수정
 function editComment(index) {
   const comments = JSON.parse(localStorage.getItem('comments')) || [];
   const comment = comments[index];
@@ -59,6 +59,7 @@ function editComment(index) {
   }
 }
 
+//코멘트 삭제
 function deleteComment(index) {
   const comments = JSON.parse(localStorage.getItem('comments')) || [];
   const comment = comments[index];
