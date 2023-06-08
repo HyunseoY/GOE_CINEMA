@@ -93,16 +93,3 @@ function getMovieIdFromURL() {
   const movieId = urlParts[urlParts.length - 1];
   return movieId;
 }
-
-function showPlaceholder() {
-  const passwordInput = document.getElementById('password');
-  passwordInput.setAttribute(
-    'placeholder',
-    '영어 대소문자 또는 숫자를 입력하세요'
-  );
-}
-
-function hidePlaceholder() {
-  const passwordInput = document.getElementById('password');
-  passwordInput.removeAttribute('placeholder');
-}
