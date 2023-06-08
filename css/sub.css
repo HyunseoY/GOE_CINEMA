@@ -124,3 +124,7 @@ button {
   height: 20px;
   filter: contrast(0%);
 }
+
+.movie-genres{
+  padding: 0 80px;
+}

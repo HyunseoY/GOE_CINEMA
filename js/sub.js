@@ -10,12 +10,22 @@ const options = {
       'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNzZmYzQyYzYyY2JhMWJmOGNjZWE3NGIzYzY1ZmIxYiIsInN1YiI6IjY0NTBhNjM3ZDcxMDdlMDE0YzZmZDk4MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ispHusWEKA3CalXIEK51_NiqFwzActFVSyietRsLH68',
   },
 };
+// 영화 장르 id별 리스트를 콘솔에 표시
+fetch('https://api.themoviedb.org/3/genre/movie/list?language=ko&page=1', options)
+  .then(response => response.json())
+  .then((response) => {
+    genre = response;
+    console.log(JSON.parse(JSON.stringify(genre)))
+  })
+  .catch(err => console.error(err));
+
 
 fetch(`https://api.themoviedb.org/3/movie/${id}?language=ko&page=1`, options)
   .then((response) => response.json())
   .then((response) => {
     movies = response;
     displayMovies(movies);
+    console.log(JSON.parse(JSON.stringify(movies)))
   })
   .catch((err) => console.error(err));
 
@@ -36,10 +46,19 @@ const displayMovies = (movies) => {
                                 <p>
                                 ${movies.overview}
                                 </p>
+                                <p>주요인물</p>                          
                                 <span><strong>평점 : ${movies.vote_average}</strong></span>
                             </div>
-                        </div>
+                              <div class="movie-genres">
+                                ${((movieGR) => {return movieGR.map((moviegenres) => `<span class="genre">${moviegenres.name}</span>`).join("");})(movies.genres)}
+                              </div>
+                            </div>
                      </div>`;
 
   detailMovie.insertAdjacentHTML('beforeend', template);
 };
+
+
+
+
+
