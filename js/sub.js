@@ -42,16 +42,11 @@ const displayMovies = (movies) => {
                                 />
                             </div>
                             <div class="movie-desc">
-                                <h2>${movies.title}</h2>
-                                <p>
+                                <h2>${movies.title} (${((movieGR) => {return movieGR.map((moviegenres) => `<span class="genre">${moviegenres.name}</span>`).join("");})(movies.genres)})</h2>
+                            <p>                            
                                 ${movies.overview}
-                                </p>
-                                <p>주요인물</p>                          
+                            </p>                         
                                 <span><strong>평점 : ${movies.vote_average}</strong></span>
-                            </div>
-                              <div class="movie-genres">
-                                ${((movieGR) => {return movieGR.map((moviegenres) => `<span class="genre">${moviegenres.name}</span>`).join("");})(movies.genres)}
-                              </div>
                             </div>
                      </div>`;
 

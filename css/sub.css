@@ -44,12 +44,23 @@ main {
 .desc-box .movie-desc h2 {
   margin: 0;
   border-bottom: 3px solid #aa232b;
+  font-size: 25px;
+  line-height: 20px;
+}
+
+.desc-box .movie-desc h3 {
+  margin: 0;
+  border-bottom: 3px solid #aa232b;
+  font-size: 15px;
+  line-height: 20px;
 }
 
 .desc-box .movie-desc p {
-  line-height: 30px;
+  line-height: 40px;
   margin: 0;
   border-bottom: 3px solid #aa232b;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 /* 양 추가사항 */
@@ -123,8 +134,4 @@ button {
   width: 20px;
   height: 20px;
   filter: contrast(0%);
-}
-
-.movie-genres{
-  padding: 0 80px;
 }
