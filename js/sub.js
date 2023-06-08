@@ -11,21 +11,23 @@ const options = {
   },
 };
 // 영화 장르 id별 리스트를 콘솔에 표시
-fetch('https://api.themoviedb.org/3/genre/movie/list?language=ko&page=1', options)
-  .then(response => response.json())
+fetch(
+  'https://api.themoviedb.org/3/genre/movie/list?language=ko&page=1',
+  options
+)
+  .then((response) => response.json())
   .then((response) => {
     genre = response;
-    console.log(JSON.parse(JSON.stringify(genre)))
+    console.log(JSON.parse(JSON.stringify(genre)));
   })
-  .catch(err => console.error(err));
-
+  .catch((err) => console.error(err));
 
 fetch(`https://api.themoviedb.org/3/movie/${id}?language=ko&page=1`, options)
   .then((response) => response.json())
   .then((response) => {
     movies = response;
     displayMovies(movies);
-    console.log(JSON.parse(JSON.stringify(movies)))
+    console.log(JSON.parse(JSON.stringify(movies)));
   })
   .catch((err) => console.error(err));
 
@@ -37,23 +39,26 @@ const displayMovies = (movies) => {
                         <div class="desc-box">
                             <div class="movie-img">
                                 <img
-                                src="https://image.tmdb.org/t/p/w500${movies.poster_path}"
+                                src="https://image.tmdb.org/t/p/w500${
+                                  movies.poster_path
+                                }"
                                 alt="포스터"
                                 />
                             </div>
                             <div class="movie-desc">
-                                <h2>${movies.title} (${((movieGR) => {return movieGR.map((moviegenres) => `<span class="genre">${moviegenres.name}</span>`).join("");})(movies.genres)})</h2>
+                                <h2>${movies.title} ${((movieGR) => {
+    return movieGR
+      .map((moviegenres) => `<span class="genre">${moviegenres.name}</span>`)
+      .join('');
+  })(movies.genres)}</h2>
                             <p>                            
                                 ${movies.overview}
                             </p>                         
-                                <span><strong>평점 : ${movies.vote_average}</strong></span>
+                                <span><strong>평점 : ${
+                                  movies.vote_average
+                                }</strong></span>
                             </div>
                      </div>`;
 
   detailMovie.insertAdjacentHTML('beforeend', template);
 };
-
-
-
-
-

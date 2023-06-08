@@ -5,7 +5,7 @@ import { displayMovies } from '../js/movie.js';
 let movies = [];
 
 fetch(
-  'https://api.themoviedb.org/3/movie/now_playing?language=ko&page=1',
+  'https://api.themoviedb.org/3/movie/now_playing?language=ko&page',
   options
 )
   .then((response) => response.json())
