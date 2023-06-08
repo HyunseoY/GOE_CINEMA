@@ -26,6 +26,7 @@ fetch(`https://api.themoviedb.org/3/movie/${id}?language=ko&page=1`, options)
   .then((response) => response.json())
   .then((response) => {
     movies = response;
+    console.log(movies);
     displayMovies(movies);
     console.log(JSON.parse(JSON.stringify(movies)));
   })
