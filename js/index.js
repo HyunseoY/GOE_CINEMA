@@ -1,15 +1,6 @@
 import { displayResults } from "./movie.js";
+import { options } from "./movie.js";
 
-const options = {
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMTY5OThlOWQ3MWIzMGMyNjA5NGIzMjAzMTU5YWRlMSIsInN1YiI6IjY0NzA4OTAxNzI2ZmIxMDBlMWMzMTQ3ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9aRWYGmmSO_w-LR_sSCNqaiyee3BBj_703_ymo46wzc",
-  },
-};
-
-// https://api.themoviedb.org/3/movie/popular?api_key=d16998e9d71b30c26094b3203159ade1&language=ko&page=1
 fetch("https://api.themoviedb.org/3/movie/popular?language=ko&page=1", options)
   .then((response) => response.json())
   .then((data) => {
@@ -88,7 +79,6 @@ function updateWidth() {
 
 // 슬라이드 이동 함수
 function moveSlide(num) {
-  // cards.style.transition = 'left 1s ease-in-out';
   cards.style.left = -num * (slideWidth + slideMargin) + "px";
   currentIdx = num;
 
@@ -131,7 +121,7 @@ cards.addEventListener("mouseout", function () {
 });
 
 //메인 검색창
-function handleKeyDown() {
+function mainSearchInput() {
   const submit = document.querySelector(".test");
   submit.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -161,7 +151,7 @@ function handleKeyDown() {
     location.replace("/sub.html?id=" + movieItem.id);
   });
 }
-handleKeyDown();
+mainSearchInput();
 
 // 아이콘 search
 const searchEl = document.querySelector(".search");

@@ -106,6 +106,8 @@ header ul > li {
   display: block;
   font-size: 20px;
   margin-top: 10px;
+  border-radius: 5px;
+  border: none;
 }
 
 #btn {
@@ -113,7 +115,7 @@ header ul > li {
   height: 57px;
   width: auto;
   left: calc(70%); /* 가로 중앙 정렬 (버튼 너비의 절반을 뺌) */
-  transform: translateY(-150%); /* 세로 중앙 정렬을 위한 변형 */
+  transform: translateY(-145%); /* 세로 중앙 정렬을 위한 변형 */
   background-color: transparent;
   border: none;
 }

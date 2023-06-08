@@ -10,9 +10,6 @@ main {
   font-size: 18px;
   background-color: #d2d2d2;
   overflow: hidden;
-}
-
-.bg-box {
   position: relative;
 }
 
@@ -24,13 +21,17 @@ main {
 
 .desc-box {
   position: absolute;
-  top: 15%;
-  left: 20%;
-  width: 60%;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  height: 60%;
+  top: 10%;
+  left: 20%;
+  width: 60%;
+  height: 70%;
   gap: 20px;
+}
+
+.movie-img {
+  overflow: auto;
 }
 
 .desc-box .movie-img img {
@@ -49,24 +50,10 @@ main {
   grid-template-rows: 50px 1fr 50px;
 }
 
-.movie-desc::-webkit-scrollbar {
-  width: 2px;
-}
-.movie-desc::-webkit-scrollbar-thumb {
-  height: 30%;
-  background: transparent;
-  border-radius: 10px;
-}
-
-.movie-desc::-webkit-scrollbar-track {
-  background: transparent;
-}
-
 .desc-box .movie-desc h2 {
   margin: 0;
   padding-bottom: 10px;
   border-bottom: 3px solid #aa232b;
-  /* font-size: 32px; */
 }
 
 .desc-box .movie-desc p {
@@ -80,15 +67,211 @@ main {
   margin: 0;
   padding-top: 10px;
   border-top: 3px solid #aa232b;
-  /* font-size: 24px; */
 }
 
+h2 {
+  font-size: x-large;
+}
+
+.genre {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 13px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* 양 추가사항 */
 .comment-container {
-  overflow: hidden;
-  height: 100%;
+  background-image: url(../img/comment_bg.png);
+  background-size: cover;
+}
+.commentBox {
+  overflow-y: scroll;
+  height: 420px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: black;
+  opacity: 80%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.comment-container img {
-  width: 100%;
+section.comment-container {
+  position: relative;
+}
+
+#commentForm {
+  width: 30%;
+  height: 300px;
+  border: solid white 1.5px;
+  border-radius: 10px;
+  padding: 2%;
+  padding-right: 0.5%;
+  margin: 1%;
+}
+
+/* form starting stylings ------------------------------- */
+.group {
+  position: relative;
+  margin-bottom: 40px;
+}
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
   display: block;
+  width: 90%;
+  border: none;
+  border-bottom: 1px solid white;
+  background: none;
+  color: whitesmoke;
+}
+input:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+label {
+  color: white;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: whitesmoke;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: whitesmoke;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+  left: 43%;
+}
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: whitesmoke;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: whitesmoke;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: whitesmoke;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+#commentBtn {
+  width: 90%;
+  height: 50px;
+  margin-left: 3%;
+  border-radius: 5px;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+#commentBtn img {
+  height: 30px;
+  width: auto;
+  filter: contrast(60%);
+}
+
+/* 여기부터 댓글들 */
+#commentList {
+  margin: 1%;
+  width: 70%;
+}
+
+.writtenComment {
+  width: fill;
+  color: rgb(0, 0, 0);
+  opacity: 70%;
+  background-color: #ffffff;
+  margin-top: 2%;
+  padding: 2%;
+  border-radius: 10px;
+  position: relative;
+}
+
+.btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.group input:focus::placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+#edit,
+#delete {
+  all: unset;
+}
+
+#edit img,
+#delete img {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  filter: contrast(20%);
 }
