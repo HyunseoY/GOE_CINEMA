@@ -128,3 +128,72 @@ cards.addEventListener('mouseover', function () {
 cards.addEventListener('mouseout', function () {
   autoSlide();
 });
+
+
+//메인 검색창
+function handleKeyDown(event) {
+  if (event.key === "Enter") {
+    Movies();
+  } 
+} 
+document.getElementById("input").addEventListener("keydown", handleKeyDown);
+function Movies() {
+  const searchTerm = document.getElementById("input").value;
+  
+  const apiKey = "284209be9689b7bc72600c5c499ce6d3";
+  const apiUrl = "https://api.themoviedb.org/3/search/movie?language=ko&page=1=api_key=" + apiKey + "&query=" + searchTerm;
+
+  fetch(apiUrl,options)
+    .then(response => response.json())
+    .then(data => {
+      displayResults(data.results);
+    })
+    .catch(error => {
+      console.error("에러 발생:", error);
+    });
+}
+
+
+function displayResults(movies) {
+  const searchResults = document.getElementById("lists");
+
+  if(movies.length ===0){
+    alert("검색 결과가 없습니다.");
+  } else{
+  movies.forEach((movie) => {
+    if(movie.poster_path !== null){
+    const template = `<div class="newMovieCard" onclick="alert(${movie.id})">
+                              <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="" />
+                              <h2 class="movieName">${movie.title}</h2>
+                              <p class="movieSum">${movie.overview}</p>
+                              <p class="movieRate">평점 ${movie.vote_average}</p>
+                            </div>`;
+     const moviesContainer = document.getElementById("container");
+
+    // 기존 영화 카드 삭제
+    moviesContainer.innerHTML = " ";
+    moviesContainer.style.height = "0";
+    moviesContainer.style.overflow = "hidden";
+    searchResults.insertAdjacentHTML("beforeend", template);}
+  
+  });
+}};
+
+
+// 아이콘 search
+const searchEl = document.querySelector('.search');
+const searchInputEl = searchEl.querySelector('input');
+
+searchEl.addEventListener('click', function () {
+  searchInputEl.focus();
+});
+
+searchInputEl.addEventListener('focus', function () {
+  searchEl.classList.add('focused');
+  searchInputEl.setAttribute('placeholder', '검색어를 입력해주세요  ');
+});
+
+searchInputEl.addEventListener('blur', function () {
+  searchEl.classList.remove('focused');
+  searchInputEl.setAttribute('placeholder', '');
+});
