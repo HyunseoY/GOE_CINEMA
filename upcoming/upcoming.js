@@ -31,7 +31,7 @@ function handleSearchInput() {
   const movieList = document.querySelector('.cards');
   movieList.addEventListener('click', ({ target }) => {
     const movieItem = target.closest('div');
-    location.replace('/detail/sub.html?id=' + movieItem.id);
+    location.replace('/sub.html?id=' + movieItem.id);
   });
 }
 
