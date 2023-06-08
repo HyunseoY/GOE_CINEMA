@@ -11,6 +11,14 @@
       rel="stylesheet"
     />
     <title>GOE's CINEMA</title>
+    <div class="search">
+      <input
+        id="input"
+        type="text"
+        placeholder=""
+      />
+      <button id="btn"><img src="./img/search.png" alt="" /></button>
+      </div>
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
     <script src="./js/index.js" defer></script>
   </head>
@@ -40,9 +48,14 @@
         </div>
       </div>
 
-      <div class="container">
+      <div class="container" id="container">
         <div class="cards" id="movies"></div>
       </div>
+
+      <div class="searchResults">
+        <div class="newCards" id="lists"></div>
+      </div>
+
     </main>
 
     <footer class="foot">
