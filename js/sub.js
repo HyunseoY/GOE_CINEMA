@@ -36,7 +36,7 @@ const displayMovies = (movies) => {
   const detailMovie = document.querySelector('.desc-container');
 
   const template = `<div class="bg-box">
-                        <img src="/img/pngegg2.png" alt="영화관 배경" />
+                        <img src="../img/pngegg2.png" alt="영화관 배경" />
                         <div class="desc-box">
                             <div class="movie-img">
                                 <img

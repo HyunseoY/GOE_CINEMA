@@ -1,6 +1,6 @@
-import { options } from '/js/movie.js';
-import { searchFilter } from '/js/movie.js';
-import { displayMovies } from '/js/movie.js';
+import { options } from '../js/movie.js';
+import { searchFilter } from '../js/movie.js';
+import { displayMovies } from '../js/movie.js';
 
 let movies = [];
 
