@@ -24,8 +24,8 @@ function createCommentHTML(comment, index) {
     <div class="writtenComment">
       <b>${comment.username}</b><p>${comment.comment}</p>
       <div class="btn">
-        <button id="edit" onclick="editComment(${index})"><img src="../img/edit.png" alt="" /></button>
-        <button id="delete" onclick="deleteComment(${index})"><img src="../img/delete.png" alt="" /></button>
+        <button id="edit" onclick="editComment(${index})"><img src="/img/edit.png" alt="" /></button>
+        <button id="delete" onclick="deleteComment(${index})"><img src="/img/delete.png" alt="" /></button>
       </div>
     </div>
   `;
