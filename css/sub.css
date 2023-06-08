@@ -52,26 +52,20 @@ main {
   border-bottom: 3px solid #aa232b;
 }
 
-.comment-container {
-  overflow: hidden;
-  height: 100%;
-}
-
-.comment-container img {
-  width: 100%;
-  display: block;
-}
-
 /* 양 추가사항 */
+.comment-container {
+  background-image: url(../img/comment_bg.png);
+  background-size: cover;
+}
 .commentBox {
   overflow-y: scroll;
-  margin-top: 100px;
-  height: 150px;
+  height: 300px;
 }
 
 .commentBox form {
   display: flex;
   flex-wrap: wrap;
+  width: 30%;
 }
 
 .commentBox input[type='text'],

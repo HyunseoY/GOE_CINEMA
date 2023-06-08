@@ -75,18 +75,18 @@ function deleteComment(index) {
   }
 }
 
-// 영화 식별자를 기반으로 해당 영화의 댓글을 가져옴.
+// 영화 식별자를 기반으로 해당 영화의 댓글을 가져옴
 function getCommentsForMovie(movieId) {
   const commentsJSON = localStorage.getItem(`comments_${movieId}`);
   return commentsJSON ? JSON.parse(commentsJSON) : [];
 }
 
-// 영화 식별자를 기반으로 해당 영화의 댓글을 설정.
+// 영화 식별자를 기반으로 해당 영화의 댓글을 설정
 function setCommentsForMovie(movieId, comments) {
   localStorage.setItem(`comments_${movieId}`, JSON.stringify(comments));
 }
 
-// 현재 페이지의 URL에서 영화 식별자를 추출.
+// 현재 페이지의 URL에서 영화 식별자를 추출
 function getMovieIdFromURL() {
   const url = window.location.href;
   const urlParts = url.split('?');
