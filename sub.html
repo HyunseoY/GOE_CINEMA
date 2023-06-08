@@ -13,6 +13,7 @@
     <title>GOE's CINEMA</title>
     <link rel="stylesheet" type="text/css" href="./css/sub.css" />
     <script src="./js/sub.js" defer></script>
+    <script src="./js/comment.js" defer></script>
   </head>
 
   <body>
@@ -57,23 +58,30 @@
     <section class="comment-container">
       <div class="commentBox">
         <form id="commentForm">
-          <label for="username"></label>
-          <input type="text" id="username" placeholder="작성자" required />
+          <div class="group">
+            <input type="text" id="username" required />
+            <span class="bar"></span>
+            <label for="username">Name</label>
+          </div>
 
-          <label for="password"></label>
-          <input
-            type="password"
-            id="password"
-            placeholder="비밀번호"
-            required
-          />
+          <div class="group">
+            <input
+              type="password"
+              id="password"
+              onfocus="showPlaceholder()"
+              onblur="hidePlaceholder()"
+              required
+            />
+            <span class="bar"></span>
+            <label for="password">Password</label>
+          </div>
 
-          <label for="comment"></label>
-          <textarea
-            id="comment"
-            required
-            placeholder="영화평을 입력하세요"
-          ></textarea>
+          <div class="group">
+            <input type="text" id="comment" required />
+            <span class="bar"></span>
+            <label for="comment">영화평을 입력하세요</label>
+          </div>
+
           <button id="commentBtn" type="submit">
             <img src="./img/submit.png" alt="" />
           </button>

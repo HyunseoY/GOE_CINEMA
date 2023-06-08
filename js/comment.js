@@ -22,10 +22,10 @@ function displayComments() {
 function createCommentHTML(comment, index) {
   return `
     <div class="writtenComment">
-      <b>${comment.username}</b>${comment.comment}
+      <b>${comment.username}</b><p>${comment.comment}</p>
       <div class="btn">
-        <button id="edit" onclick="editComment(${index})"><img src="../img/edit.png" alt="" /></button>
-        <button id="delete" onclick="deleteComment(${index})"><img src="../img/delete.png" alt="" /></button>
+        <button id="edit" onclick="editComment(${index})">수정</button>
+        <button id="delete" onclick="deleteComment(${index})">삭제</button>
       </div>
     </div>
   `;
@@ -92,4 +92,17 @@ function getMovieIdFromURL() {
   const urlParts = url.split('?');
   const movieId = urlParts[urlParts.length - 1];
   return movieId;
+}
+
+function showPlaceholder() {
+  const passwordInput = document.getElementById('password');
+  passwordInput.setAttribute(
+    'placeholder',
+    '영어 대소문자 또는 숫자를 입력하세요'
+  );
+}
+
+function hidePlaceholder() {
+  const passwordInput = document.getElementById('password');
+  passwordInput.removeAttribute('placeholder');
 }
