@@ -12,18 +12,25 @@
     />
     <title>GOE's CINEMA</title>
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
-    <script src="./js/index.js" defer></script>
+    <script src="./js/index.js" type="module"></script>
+    <div class="search">
+      <img class="tabFinger" src="./img/finger.png" />
+      <form class="test">
+        <input id="input" type="text" placeholder="" />
+        <button id="btn"><img src="./img/search.png" alt="" /></button>
+      </form>
+    </div>
   </head>
   <body>
     <header>
       <nav>
         <ul>
-          <li><a href="../popular/popular.html">인기영화</a></li>
-          <li><a href="../nowPlaying/now_playing.html">현재상영</a></li>
-          <li class="goe"><a href="../index.html">GOE's CINEMA</a></li>
-          <li><a href="../topRated/top_rated.html">높은평점</a></li>
+          <li><a href="./popular/popular.html">인기영화</a></li>
+          <li><a href="./nowPlaying/now_playing.html">현재상영</a></li>
+          <li class="goe"><a href="./index.html">GOE's CINEMA</a></li>
+          <li><a href="./topRated/top_rated.html">높은평점</a></li>
           <li>
-            <a class="current" href="../upcoming/upcoming.html">개봉예정</a>
+            <a class="current" href="./upcoming/upcoming.html">개봉예정</a>
           </li>
         </ul>
       </nav>
@@ -40,8 +47,12 @@
         </div>
       </div>
 
-      <div class="container">
+      <div class="container" id="container">
         <div class="cards" id="movies"></div>
+      </div>
+
+      <div class="searchResults">
+        <div class="newCards" id="lists"></div>
       </div>
     </main>
 

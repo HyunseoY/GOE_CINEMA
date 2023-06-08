@@ -29,6 +29,8 @@ main {
   width: 60%;
   display: grid;
   grid-template-columns: 1fr 2fr;
+  height: 60%;
+  gap: 20px;
 }
 
 .desc-box .movie-img img {
@@ -38,21 +40,47 @@ main {
 }
 
 .desc-box .movie-desc {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
   line-height: 46px;
   display: grid;
   grid-template-rows: 50px 1fr 50px;
-  padding: 0 30px;
+}
+
+.movie-desc::-webkit-scrollbar {
+  width: 2px;
+}
+.movie-desc::-webkit-scrollbar-thumb {
+  height: 30%;
+  background: transparent;
+  border-radius: 10px;
+}
+
+.movie-desc::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .desc-box .movie-desc h2 {
   margin: 0;
+  padding-bottom: 10px;
   border-bottom: 3px solid #aa232b;
+  /* font-size: 32px; */
 }
 
 .desc-box .movie-desc p {
   line-height: 30px;
   margin: 0;
-  border-bottom: 3px solid #aa232b;
+  height: 73%;
+  font-size: 15px;
+}
+
+.movie-desc span {
+  margin: 0;
+  padding-top: 10px;
+  border-top: 3px solid #aa232b;
+  /* font-size: 24px; */
 }
 
 .comment-container {

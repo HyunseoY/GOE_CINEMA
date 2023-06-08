@@ -1,3 +1,5 @@
+import { displayResults } from "./movie.js";
+
 const options = {
   method: "GET",
   headers: {
@@ -101,7 +103,6 @@ function moveSlide(num) {
       cards.classList.add("animated");
     }, 1050);
   }
-  console.log(currentIdx, 20);
 }
 
 let timer = undefined;
@@ -127,4 +128,55 @@ cards.addEventListener("mouseover", function () {
 
 cards.addEventListener("mouseout", function () {
   autoSlide();
+});
+
+//메인 검색창
+function handleKeyDown() {
+  const submit = document.querySelector(".test");
+  submit.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const searchTerm = document.getElementById("input").value;
+    const apiKey = "284209be9689b7bc72600c5c499ce6d3";
+    const apiUrl =
+      "https://api.themoviedb.org/3/search/movie?language=ko&page=1=api_key=" +
+      apiKey +
+      "&query=" +
+      searchTerm;
+
+    fetch(apiUrl, options)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.results);
+        displayResults(data.results);
+      })
+      .catch((error) => {
+        console.error("에러 발생:", error);
+      });
+  });
+
+  const movieList = document.querySelector(".newCards");
+  movieList.addEventListener("click", ({ target }) => {
+    const movieItem = target.closest("div");
+    location.replace("/sub.html?id=" + movieItem.id);
+  });
+}
+handleKeyDown();
+
+// 아이콘 search
+const searchEl = document.querySelector(".search");
+const searchInputEl = searchEl.querySelector("input");
+
+searchEl.addEventListener("click", function () {
+  searchInputEl.focus();
+});
+
+searchInputEl.addEventListener("focus", function () {
+  searchEl.classList.add("focused");
+  searchInputEl.setAttribute("placeholder", "검색어를 입력해주세요  ");
+});
+
+searchInputEl.addEventListener("blur", function () {
+  searchEl.classList.remove("focused");
+  searchInputEl.setAttribute("placeholder", "");
 });
