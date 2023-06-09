@@ -93,3 +93,26 @@ function getMovieIdFromURL() {
   const movieId = urlParts[urlParts.length - 1];
   return movieId;
 }
+
+// 버튼 클릭 시 맨 위로 이동
+const commentBox = document.querySelector('.commentBox');
+const topBtn = commentBox.querySelector('.moveTopBtn');
+
+topBtn.addEventListener('click', () => {
+  commentBox.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// 버튼 초기에 숨기기
+topBtn.style.display = 'none';
+
+// 스크롤 이벤트 핸들러
+commentBox.addEventListener('scroll', () => {
+  const scrollPosition = commentBox.scrollTop;
+
+  // 버튼 보이기/숨기기 결정
+  if (scrollPosition > 200) {
+    topBtn.style.display = 'block';
+  } else {
+    topBtn.style.display = 'none';
+  }
+});

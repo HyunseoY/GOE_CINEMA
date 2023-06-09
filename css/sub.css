@@ -23,7 +23,7 @@ main {
   position: absolute;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  top: 10%;
+  top: 12.5%;
   left: 20%;
   width: 60%;
   height: 70%;
@@ -101,6 +101,8 @@ h2 {
   -ms-overflow-style: none;
   flex-wrap: wrap;
   justify-content: center;
+  position: relative;
+  overflow: auto;
 }
 
 section.comment-container {
@@ -274,4 +276,20 @@ input:focus ~ .bar:after {
   height: 25px;
   cursor: pointer;
   filter: contrast(20%);
+}
+
+.moveTopBtn {
+  position: sticky;
+  top: 80%;
+  width: 4rem;
+  height: 4rem;
+}
+
+.moveTopBtn img {
+  width: 50px;
+  height: auto;
+}
+
+.moveTopBtn:hover {
+  filter: invert(100%);
 }

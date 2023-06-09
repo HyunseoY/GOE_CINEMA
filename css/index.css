@@ -85,7 +85,7 @@ header > nav {
 }
 
 header ul {
-  width: 1000px;
+  width: 90%;
   height: 100%;
   display: flex;
   align-items: center;
