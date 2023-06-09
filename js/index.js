@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+import { displayResults } from "./movie.js";
+import { options } from "./movie.js";
+
+fetch("https://api.themoviedb.org/3/movie/popular?language=ko&page=1", options)
+=======
 import { displayResults } from './movie.js';
 
 const options = {
@@ -11,6 +17,7 @@ const options = {
 
 // https://api.themoviedb.org/3/movie/popular?api_key=d16998e9d71b30c26094b3203159ade1&language=ko&page=1
 fetch('https://api.themoviedb.org/3/movie/popular?language=ko&page=1', options)
+>>>>>>> 3087c96560ff2ee27c8a4c8d349f2eaf45736773
   .then((response) => response.json())
   .then((data) => {
     const moviesContainer = document.getElementById('movies');
@@ -88,8 +95,12 @@ function updateWidth() {
 
 // 슬라이드 이동 함수
 function moveSlide(num) {
+<<<<<<< HEAD
+  cards.style.left = -num * (slideWidth + slideMargin) + "px";
+=======
   // cards.style.transition = 'left 1s ease-in-out';
   cards.style.left = -num * (slideWidth + slideMargin) + 'px';
+>>>>>>> 3087c96560ff2ee27c8a4c8d349f2eaf45736773
   currentIdx = num;
 
   // 슬라이드가 끝에 도달하면 다시 처음으로 이동
@@ -131,9 +142,15 @@ cards.addEventListener('mouseout', function () {
 });
 
 //메인 검색창
+<<<<<<< HEAD
+function mainSearchInput() {
+  const submit = document.querySelector(".test");
+  submit.addEventListener("submit", (event) => {
+=======
 function handleKeyDown() {
   const submit = document.querySelector('.test');
   submit.addEventListener('submit', (event) => {
+>>>>>>> 3087c96560ff2ee27c8a4c8d349f2eaf45736773
     event.preventDefault();
 
     const searchTerm = document.getElementById('input').value;
@@ -161,7 +178,7 @@ function handleKeyDown() {
     location.replace('/sub.html?id=' + movieItem.id);
   });
 }
-handleKeyDown();
+mainSearchInput();
 
 // 아이콘 search
 const searchEl = document.querySelector('.search');

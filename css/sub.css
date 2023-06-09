@@ -21,13 +21,17 @@ main {
 
 .desc-box {
   position: absolute;
-  top: 15%;
-  left: 20%;
-  width: 60%;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  height: 60%;
+  top: 10%;
+  left: 20%;
+  width: 60%;
+  height: 70%;
   gap: 20px;
+}
+
+.movie-img {
+  overflow: auto;
 }
 
 .desc-box .movie-img img {
@@ -46,24 +50,10 @@ main {
   grid-template-rows: 50px 1fr 50px;
 }
 
-.movie-desc::-webkit-scrollbar {
-  width: 2px;
-}
-.movie-desc::-webkit-scrollbar-thumb {
-  height: 30%;
-  background: transparent;
-  border-radius: 10px;
-}
-
-.movie-desc::-webkit-scrollbar-track {
-  background: transparent;
-}
-
 .desc-box .movie-desc h2 {
   margin: 0;
   padding-bottom: 10px;
   border-bottom: 3px solid #aa232b;
-  /* font-size: 32px; */
 }
 
 .desc-box .movie-desc p {
@@ -77,11 +67,44 @@ main {
   margin: 0;
   padding-top: 10px;
   border-top: 3px solid #aa232b;
-  /* font-size: 24px; */
 }
 
 h2 {
   font-size: x-large;
+<<<<<<< HEAD
+}
+
+.genre {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 13px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* 양 추가사항 */
+.comment-container {
+  background-image: url(../img/comment_bg.png);
+  background-size: cover;
+}
+.commentBox {
+  overflow-y: scroll;
+  height: 420px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: black;
+  opacity: 80%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+=======
 }
 
 .genre {
@@ -111,6 +134,7 @@ h2 {
   display: none;
 }
 
+>>>>>>> 3087c96560ff2ee27c8a4c8d349f2eaf45736773
 section.comment-container {
   position: relative;
 }
@@ -174,7 +198,11 @@ input:valid ~ label {
 }
 .bar:before,
 .bar:after {
+<<<<<<< HEAD
+  content: "";
+=======
   content: '';
+>>>>>>> 3087c96560ff2ee27c8a4c8d349f2eaf45736773
   height: 2px;
   width: 0;
   bottom: 1px;

@@ -42,7 +42,7 @@ export function displayResults(movies) {
   } else {
     movies.forEach((movie) => {
       if (movie.poster_path !== null) {
-        const template = `<div class="newMovieCard" onclick="alert(${movie.id})">
+        const template = `<div class="newMovieCard" id="${movie.id}">
                                 <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="" />
                                 <h2 class="movieName">${movie.title}</h2>
                                 <p class="movieSum">${movie.overview}</p>
