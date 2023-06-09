@@ -71,7 +71,6 @@ main {
 
 h2 {
   font-size: x-large;
-<<<<<<< HEAD
 }
 
 .genre {
@@ -104,37 +103,6 @@ h2 {
   justify-content: center;
 }
 
-=======
-}
-
-.genre {
-  font-size: small;
-}
-
-/* 양 추가사항 */
-.comment-container {
-  background-image: url(../img/comment_bg.png);
-  background-size: cover;
-}
-.commentBox {
-  overflow-y: scroll;
-  height: 420px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  background-color: black;
-  opacity: 80%;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.commentBox::-webkit-scrollbar {
-  display: none;
-}
-
->>>>>>> 3087c96560ff2ee27c8a4c8d349f2eaf45736773
 section.comment-container {
   position: relative;
 }
@@ -198,11 +166,7 @@ input:valid ~ label {
 }
 .bar:before,
 .bar:after {
-<<<<<<< HEAD
-  content: "";
-=======
   content: '';
->>>>>>> 3087c96560ff2ee27c8a4c8d349f2eaf45736773
   height: 2px;
   width: 0;
   bottom: 1px;
